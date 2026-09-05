@@ -21,7 +21,14 @@
         "next": [
             "DailyGift",
             "Shop"
-        ]
+        ],
+        "target": [
+            1010,
+            600,
+            60,
+            30
+        ],
+        "text_doc": "OCR命中补给站后点击其图标中心(旧版无target致随机取点)"
     },
     "DailyGift": {
         "recognition": "OCR",
