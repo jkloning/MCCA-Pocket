@@ -2,11 +2,9 @@
     "interface_version": 2,
     "name": "MCCA",
     "label": "交错战线助手",
-    "version": "1.7.5",
+    "version": "1.7.6",
     "icon": "icon.png",
-    "github": "https://github.com/MaaXYZ/MCCA",
-    "mirrorchyan_rid": "MCCA",
-    "mirrorchyan_multiplatform": true,
+    "github": "https://github.com/jkloning/MCCA-Pocket",
     "controller": [
         {
             "name": "ADB 默认方式",
