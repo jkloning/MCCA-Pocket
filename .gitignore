@@ -1,0 +1,11 @@
+# 打包产物与本地调试
+debug/
+*.log
+*.apk
+
+# 图像缓存
+*.jpg
+
+# 系统文件
+Thumbs.db
+.DS_Store
