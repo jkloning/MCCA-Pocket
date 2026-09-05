@@ -15,7 +15,7 @@
             900,
             500,
             280,
-            180
+            210
         ],
         "action": "Click",
         "next": [
@@ -23,10 +23,10 @@
             "Shop"
         ],
         "target": [
-            1010,
-            600,
-            60,
-            30
+            1040,
+            660,
+            50,
+            20
         ],
         "text_doc": "OCR命中补给站后点击其图标中心(旧版无target致随机取点)"
     },
@@ -36,17 +36,18 @@
             "礼包"
         ],
         "roi": [
-            250,
-            320,
-            180,
-            90
+            30,
+            300,
+            160,
+            80
         ],
         "action": "Click",
         "post_delay": 2000,
         "next": [
             "DailyGiftYes",
             "进入首页"
-        ]
+        ],
+        "text_doc": "左侧菜单'礼包'(720p 实测 y≈325-347)，旧版 roi 在顶部已失效"
     },
     "DailyGiftYes": {
         "recognition": "TemplateMatch",
@@ -72,15 +73,16 @@
             "免费"
         ],
         "roi": [
-            163,
-            9,
-            409,
-            239
+            650,
+            180,
+            450,
+            150
         ],
         "next": [
             "Purchase",
             "ForFree"
-        ]
+        ],
+        "text_doc": "弹窗'售价 免费'区域(用户实截 720p (716,226)-(1020,255))"
     },
     "Purchase": {
         "recognition": "TemplateMatch",

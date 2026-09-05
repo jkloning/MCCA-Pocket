@@ -21,6 +21,12 @@
         "next": [
             "time_limited",
             "Shop1"
+        ],
+        "target": [
+            1040,
+            660,
+            50,
+            20
         ]
     },
     "time_limited": {
