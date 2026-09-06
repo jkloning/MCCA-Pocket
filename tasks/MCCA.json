@@ -27,6 +27,9 @@
             "entry": "Time-limited Shopping",
             "controller": [
                 "ADB 默认方式"
+            ],
+            "option": [
+                "购买物品清单"
             ]
         },
         {
@@ -1213,6 +1216,213 @@
                     "pipeline_override": {
                         "模拟军演_刷新对手": {
                             "expected": "战力[3-9]\\d{4,}$"
+                        }
+                    }
+                }
+            ]
+        },
+        "购买物品清单": {
+            "type": "checkbox",
+            "label": "购买物品清单",
+            "description": "勾选想要的物品，限时贸易所里找到就全部购买；一个都没找到时兜底买左上角第一个",
+            "default_case": [
+                "亚金合金",
+                "亚金电池",
+                "亚金组件",
+                "亚金半导体",
+                "涅槃剂",
+                "晶片",
+                "幻金能源",
+                "幻金碳",
+                "荧晶精华瓶",
+                "荧晶单元",
+                "亚金外壳",
+                "亚金蓄能器",
+                "亚金装置",
+                "亚金二极管",
+                "凝胶",
+                "结晶体",
+                "幻金聚变器",
+                "幻金刚石",
+                "荧晶培养罐",
+                "荧晶密钥",
+                "武装技能训练",
+                "稀有模块"
+            ],
+            "cases": [
+                {
+                    "name": "亚金合金",
+                    "pipeline_override": {
+                        "Shop_Item_亚金合金": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金电池",
+                    "pipeline_override": {
+                        "Shop_Item_亚金电池": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金组件",
+                    "pipeline_override": {
+                        "Shop_Item_亚金组件": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金半导体",
+                    "pipeline_override": {
+                        "Shop_Item_亚金半导体": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "涅槃剂",
+                    "pipeline_override": {
+                        "Shop_Item_涅槃剂": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "晶片",
+                    "pipeline_override": {
+                        "Shop_Item_晶片": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "幻金能源",
+                    "pipeline_override": {
+                        "Shop_Item_幻金能源": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "幻金碳",
+                    "pipeline_override": {
+                        "Shop_Item_幻金碳": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "荧晶精华瓶",
+                    "pipeline_override": {
+                        "Shop_Item_荧晶精华瓶": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "荧晶单元",
+                    "pipeline_override": {
+                        "Shop_Item_荧晶单元": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金外壳",
+                    "pipeline_override": {
+                        "Shop_Item_亚金外壳": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金蓄能器",
+                    "pipeline_override": {
+                        "Shop_Item_亚金蓄能器": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金装置",
+                    "pipeline_override": {
+                        "Shop_Item_亚金装置": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "亚金二极管",
+                    "pipeline_override": {
+                        "Shop_Item_亚金二极管": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "凝胶",
+                    "pipeline_override": {
+                        "Shop_Item_凝胶": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "结晶体",
+                    "pipeline_override": {
+                        "Shop_Item_结晶体": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "幻金聚变器",
+                    "pipeline_override": {
+                        "Shop_Item_幻金聚变器": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "幻金刚石",
+                    "pipeline_override": {
+                        "Shop_Item_幻金刚石": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "荧晶培养罐",
+                    "pipeline_override": {
+                        "Shop_Item_荧晶培养罐": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "荧晶密钥",
+                    "pipeline_override": {
+                        "Shop_Item_荧晶密钥": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "武装技能训练",
+                    "pipeline_override": {
+                        "Shop_Item_武装技能训练": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "稀有模块",
+                    "pipeline_override": {
+                        "Shop_Item_稀有模块": {
+                            "enabled": true
                         }
                     }
                 }
