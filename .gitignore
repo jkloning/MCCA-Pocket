@@ -9,3 +9,6 @@ debug/
 # 系统文件
 Thumbs.db
 .DS_Store
+
+# Mimosa 本地扫描产物
+.mimosa/
