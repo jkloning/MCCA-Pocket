@@ -1,0 +1,26 @@
+{
+  "version": "20260826",
+  "note": "交错战线反和谐小开关资源包（含皮洛可）",
+  "gamePackages": [
+    "com.megagame.crosscore"
+  ],
+  "customDir": "Custom",
+  "replacement": {
+    "file": "Replacement.txt",
+    "content": "debugmode"
+  },
+  "parts": [
+    {
+      "file": "Custom.zip.part1",
+      "url": "https://github.com/jkloning/MCCA-Pocket/releases/download/xiaokaiguan-20260826/Custom.zip.part1",
+      "size": 1799952028,
+      "sha256": "02fd1fc94b2f09c6c7737afc47a518ce5113f8356288209740351e9e0c28b12e"
+    },
+    {
+      "file": "Custom.zip.part2",
+      "url": "https://github.com/jkloning/MCCA-Pocket/releases/download/xiaokaiguan-20260826/Custom.zip.part2",
+      "size": 1073619171,
+      "sha256": "72dfe2460385b79c73b2dd42d36226ded68d588e5be1c75e33eed9b864eb20a8"
+    }
+  ]
+}
