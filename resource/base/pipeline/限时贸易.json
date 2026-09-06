@@ -27,15 +27,16 @@
             660,
             50,
             20
-        ]
+        ],
+        "post_delay": 1500
     },
     "time_limited": {
-        "recognition": "TemplateMatch",
+        "recognition": "OCR",
         "roi": [
             40,
             545,
-            210,
-            85
+            230,
+            90
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -65,11 +66,10 @@
             "Buy_first",
             "进入首页"
         ],
-        "template": [
-            "shop_trade_entry.png"
-        ],
-        "threshold": 0.8,
-        "text_doc": "进限时贸易所页；依次找勾选物品购买，全没找到兜底买第一个（2026-09-06 勾选清单改造）"
+        "text_doc": "进限时贸易所页；OCR 左侧菜单入口（2026-09-07 改 OCR，实测 720p 文本 (93,583)-(191,610)）；依次找勾选物品购买，全没找到兜底买第一个",
+        "expected": [
+            "限时贸易所"
+        ]
     },
     "Buyit": {
         "recognition": "TemplateMatch",
@@ -97,18 +97,41 @@
             "亚金合金"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金合金」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金合金」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金合金",
-            "Close_亚金合金"
+            "Close_亚金合金",
+            "Shop_Item_亚金电池",
+            "Shop_Item_亚金组件",
+            "Shop_Item_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金合金": {
@@ -125,10 +148,32 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金合金"
+            "Close_亚金合金",
+            "Shop_Item_亚金电池",
+            "Shop_Item_亚金组件",
+            "Shop_Item_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金合金": {
@@ -183,18 +228,40 @@
             "亚金电池"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金电池」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金电池」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金电池",
-            "Close_亚金电池"
+            "Close_亚金电池",
+            "Shop_Item_亚金组件",
+            "Shop_Item_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金电池": {
@@ -211,10 +278,31 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金电池"
+            "Close_亚金电池",
+            "Shop_Item_亚金组件",
+            "Shop_Item_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金电池": {
@@ -268,18 +356,39 @@
             "亚金组件"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金组件」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金组件」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金组件",
-            "Close_亚金组件"
+            "Close_亚金组件",
+            "Shop_Item_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金组件": {
@@ -296,10 +405,30 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金组件"
+            "Close_亚金组件",
+            "Shop_Item_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金组件": {
@@ -352,18 +481,38 @@
             "亚金半导体"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金半导体」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金半导体」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金半导体",
-            "Close_亚金半导体"
+            "Close_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金半导体": {
@@ -380,10 +529,29 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金半导体"
+            "Close_亚金半导体",
+            "Shop_Item_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金半导体": {
@@ -435,18 +603,37 @@
             "涅槃剂"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「涅槃剂」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「涅槃剂」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_涅槃剂",
-            "Close_涅槃剂"
+            "Close_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_涅槃剂": {
@@ -463,10 +650,28 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_涅槃剂"
+            "Close_涅槃剂",
+            "Shop_Item_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_涅槃剂": {
@@ -517,18 +722,36 @@
             "晶片"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「晶片」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「晶片」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_晶片",
-            "Close_晶片"
+            "Close_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_晶片": {
@@ -545,10 +768,27 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_晶片"
+            "Close_晶片",
+            "Shop_Item_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_晶片": {
@@ -598,18 +838,35 @@
             "幻金能源"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「幻金能源」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「幻金能源」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_幻金能源",
-            "Close_幻金能源"
+            "Close_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_幻金能源": {
@@ -626,10 +883,26 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_幻金能源"
+            "Close_幻金能源",
+            "Shop_Item_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_幻金能源": {
@@ -678,18 +951,34 @@
             "幻金碳"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「幻金碳」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「幻金碳」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_幻金碳",
-            "Close_幻金碳"
+            "Close_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_幻金碳": {
@@ -706,10 +995,25 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_幻金碳"
+            "Close_幻金碳",
+            "Shop_Item_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_幻金碳": {
@@ -757,18 +1061,32 @@
             "荧晶精华瓶"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
-        "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「荧晶精华瓶」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「荧晶精华瓶」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_荧晶精华瓶",
-            "Close_荧晶精华瓶"
+            "Close_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_荧晶精华瓶": {
@@ -785,10 +1103,24 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_荧晶精华瓶"
+            "Close_荧晶精华瓶",
+            "Shop_Item_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_荧晶精华瓶": {
@@ -835,18 +1167,32 @@
             "荧晶单元"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「荧晶单元」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「荧晶单元」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_荧晶单元",
-            "Close_荧晶单元"
+            "Close_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_荧晶单元": {
@@ -863,10 +1209,23 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_荧晶单元"
+            "Close_荧晶单元",
+            "Shop_Item_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_荧晶单元": {
@@ -912,18 +1271,31 @@
             "亚金外壳"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金外壳」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金外壳」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金外壳",
-            "Close_亚金外壳"
+            "Close_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金外壳": {
@@ -940,10 +1312,22 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金外壳"
+            "Close_亚金外壳",
+            "Shop_Item_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金外壳": {
@@ -988,18 +1372,30 @@
             "亚金蓄能器"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金蓄能器」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金蓄能器」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金蓄能器",
-            "Close_亚金蓄能器"
+            "Close_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金蓄能器": {
@@ -1016,10 +1412,21 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金蓄能器"
+            "Close_亚金蓄能器",
+            "Shop_Item_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金蓄能器": {
@@ -1063,18 +1470,29 @@
             "亚金装置"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金装置」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金装置」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金装置",
-            "Close_亚金装置"
+            "Close_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金装置": {
@@ -1091,10 +1509,20 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金装置"
+            "Close_亚金装置",
+            "Shop_Item_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金装置": {
@@ -1137,18 +1565,28 @@
             "亚金二极管"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「亚金二极管」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「亚金二极管」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_亚金二极管",
-            "Close_亚金二极管"
+            "Close_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_亚金二极管": {
@@ -1165,10 +1603,19 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_亚金二极管"
+            "Close_亚金二极管",
+            "Shop_Item_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_亚金二极管": {
@@ -1210,18 +1657,27 @@
             "凝胶"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「凝胶」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「凝胶」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_凝胶",
-            "Close_凝胶"
+            "Close_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_凝胶": {
@@ -1238,10 +1694,18 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_凝胶"
+            "Close_凝胶",
+            "Shop_Item_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_凝胶": {
@@ -1282,18 +1746,26 @@
             "结晶体"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「结晶体」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「结晶体」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_结晶体",
-            "Close_结晶体"
+            "Close_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_结晶体": {
@@ -1310,10 +1782,17 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_结晶体"
+            "Close_结晶体",
+            "Shop_Item_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_结晶体": {
@@ -1353,18 +1832,25 @@
             "幻金聚变器"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「幻金聚变器」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「幻金聚变器」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_幻金聚变器",
-            "Close_幻金聚变器"
+            "Close_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_幻金聚变器": {
@@ -1381,10 +1867,16 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_幻金聚变器"
+            "Close_幻金聚变器",
+            "Shop_Item_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_幻金聚变器": {
@@ -1423,18 +1915,24 @@
             "幻金刚石"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「幻金刚石」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「幻金刚石」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_幻金刚石",
-            "Close_幻金刚石"
+            "Close_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_幻金刚石": {
@@ -1451,10 +1949,15 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_幻金刚石"
+            "Close_幻金刚石",
+            "Shop_Item_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_幻金刚石": {
@@ -1492,18 +1995,23 @@
             "荧晶培养罐"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「荧晶培养罐」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「荧晶培养罐」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_荧晶培养罐",
-            "Close_荧晶培养罐"
+            "Close_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_荧晶培养罐": {
@@ -1520,10 +2028,14 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_荧晶培养罐"
+            "Close_荧晶培养罐",
+            "Shop_Item_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_荧晶培养罐": {
@@ -1560,18 +2072,22 @@
             "荧晶密钥"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「荧晶密钥」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「荧晶密钥」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_荧晶密钥",
-            "Close_荧晶密钥"
+            "Close_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_荧晶密钥": {
@@ -1588,10 +2104,13 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_荧晶密钥"
+            "Close_荧晶密钥",
+            "Shop_Item_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_荧晶密钥": {
@@ -1627,18 +2146,21 @@
             "武装技能训练"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「武装技能训练」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「武装技能训练」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_武装技能训练",
-            "Close_武装技能训练"
+            "Close_武装技能训练",
+            "Shop_Item_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_武装技能训练": {
@@ -1655,10 +2177,12 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_武装技能训练"
+            "Close_武装技能训练",
+            "Shop_Item_稀有模块",
+            "进入首页"
         ]
     },
     "Close_武装技能训练": {
@@ -1693,18 +2217,20 @@
             "稀有模块"
         ],
         "roi": [
-            380,
+            260,
             130,
-            900,
+            1020,
             590
         ],
         "action": "Click",
         "post_delay": 2500,
         "enabled": false,
-        "text_doc": "勾选启用：OCR 找到「稀有模块」点卡片开购买弹窗（2026-09-06 勾选清单改造）",
+        "text_doc": "勾选启用：OCR 找到「稀有模块」点卡片开购买弹窗；点击被吞则落到下一件（2026-09-07）",
         "next": [
             "Buyit_稀有模块",
-            "Close_稀有模块"
+            "Close_稀有模块",
+            "Buy_first",
+            "进入首页"
         ]
     },
     "Buyit_稀有模块": {
@@ -1721,10 +2247,11 @@
         "threshold": 0.8,
         "action": "Click",
         "post_delay": 1500,
-        "text_doc": "点购买按钮；获得物品横幅由 JumpBack 处理（2026-09-06 勾选清单改造）",
+        "text_doc": "点购买按钮；买完横幅 JumpBack 处理，弹窗已关则直接继续下一件（2026-09-07 链路贯穿）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_稀有模块"
+            "Close_稀有模块",
+            "进入首页"
         ]
     },
     "Close_稀有模块": {
@@ -1752,21 +2279,6 @@
             "进入首页"
         ]
     },
-    "Buy_first": {
-        "action": "Click",
-        "target": [
-            363,
-            271,
-            60,
-            40
-        ],
-        "post_delay": 2500,
-        "text_doc": "兜底：勾选物品一个都没找到时买左上角第一个；若该卡售罄则弹窗经 Close 兜底关闭（2026-09-06 勾选清单改造）",
-        "next": [
-            "Buyit_first",
-            "Close_first"
-        ]
-    },
     "Buyit_first": {
         "recognition": "TemplateMatch",
         "template": [
@@ -1784,7 +2296,8 @@
         "text_doc": "兜底购买按钮（2026-09-06 勾选清单改造）",
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Close_first"
+            "Close_first",
+            "进入首页"
         ]
     },
     "Close_first": {
@@ -1808,6 +2321,22 @@
         "post_delay": 1500,
         "text_doc": "兜底弹窗关闭；售罄卡无购买内容则直接过（2026-09-06 勾选清单改造）",
         "next": [
+            "进入首页"
+        ]
+    },
+    "Buy_first": {
+        "action": "Click",
+        "target": [
+            363,
+            271,
+            60,
+            40
+        ],
+        "post_delay": 2500,
+        "text_doc": "兜底：勾选物品一个都没找到时买左上角第一个（2026-09-07 实测该点可开弹窗）；点击被吞则回主页",
+        "next": [
+            "Buyit_first",
+            "Close_first",
             "进入首页"
         ]
     }

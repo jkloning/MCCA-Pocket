@@ -18,6 +18,7 @@
             210
         ],
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "DailyGift",
             "Shop"
@@ -28,7 +29,7 @@
             50,
             20
         ],
-        "text_doc": "OCR命中补给站后点击其图标中心(旧版无target致随机取点)"
+        "text_doc": "OCR命中补给站后点击其图标中心(旧版无target致随机取点)；post_delay等商店页加载完再轮询"
     },
     "DailyGift": {
         "recognition": "OCR",
@@ -38,8 +39,8 @@
         "roi": [
             30,
             300,
-            160,
-            80
+            170,
+            95
         ],
         "action": "Click",
         "post_delay": 2000,
@@ -47,25 +48,32 @@
             "DailyGiftYes",
             "进入首页"
         ],
-        "text_doc": "左侧菜单'礼包'(720p 实测 y≈325-347)，旧版 roi 在顶部已失效"
+        "text_doc": "左侧菜单'礼包'(720p 实测 y≈353-380)，旧版 roi 在顶部已失效"
     },
     "DailyGiftYes": {
-        "recognition": "TemplateMatch",
+        "recognition": "OCR",
+        "expected": [
+            "免费"
+        ],
         "roi": [
-            650,
-            200,
-            450,
-            120
+            250,
+            575,
+            210,
+            75
         ],
         "action": "Click",
+        "target": [
+            280,
+            250,
+            140,
+            320
+        ],
+        "post_delay": 2000,
         "next": [
             "ForFree",
             "进入首页"
         ],
-        "template": [
-            "shop_free_tag.png"
-        ],
-        "threshold": 0.8
+        "text_doc": "礼包页第一张卡的价格'免费'(720p 实测 (325,595)-(371,621))，限定第一卡区域避免误匹配；领完后卡片从列表消失→OCR不中→回主页。旧版 shop_free_tag.png 是裁错的漩涡图且 ROI 也不在第一卡，导致点不到每日免费礼包就退出(2026-09-07 重制)。target 固定点第一卡中心开弹窗"
     },
     "ForFree": {
         "recognition": "OCR",
@@ -102,6 +110,7 @@
         "template": [
             "shop_buy_btn.png"
         ],
-        "threshold": 0.8
+        "threshold": 0.8,
+        "text_doc": "黄色购买按钮模板(720p 实测得分0.999)；买完横幅由 JumpBack 处理，随后礼包页已无'免费'→回主页"
     }
 }
