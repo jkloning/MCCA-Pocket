@@ -32,61 +32,22 @@
     "time_limited": {
         "recognition": "TemplateMatch",
         "roi": [
-            220,
-            530,
-            220,
-            110
+            40,
+            545,
+            210,
+            85
         ],
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "Buy_something",
+            "Buy_first",
             "进入首页"
         ],
         "template": [
             "shop_trade_entry.png"
         ],
-        "threshold": 0.8
-    },
-    "Buy_something": {
-        "recognition": "OCR",
-        "expected": [
-            "亚金合金",
-            "亚金电池",
-            "亚金组件",
-            "亚金半导体",
-            "涅槃剂",
-            "晶片",
-            "幻金能源",
-            "幻金碳",
-            "荧晶精华瓶",
-            "荧晶单元",
-            "亚金外壳",
-            "亚金蓄能器",
-            "亚金装置",
-            "亚金二极管",
-            "凝胶",
-            "结晶体",
-            "幻金聚变器",
-            "幻金刚石",
-            "荧晶培养罐",
-            "荧晶密钥",
-            "武装技能训练",
-            "稀有模块"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "Buyit",
-            "进入首页",
-            "Buy_something"
-        ],
-        "roi": [
-            380,
-            130,
-            900,
-            590
-        ]
+        "threshold": 0.8,
+        "text_doc": "限时贸易所左侧菜单项（未选中白字态）；原模板是过期UI残片，2026-09-06 用实机截图重制并修 ROI"
     },
     "Buyit": {
         "recognition": "TemplateMatch",
@@ -100,13 +61,27 @@
         "post_delay": 1000,
         "next": [
             "[JumpBack]子任务_获得物品",
-            "Buy_something",
-            "Buyit",
             "进入首页"
         ],
         "template": [
             "shop_buy_btn.png"
         ],
-        "threshold": 0.8
+        "threshold": 0.8,
+        "text_doc": "点购买按钮；买完直接回主页（2026-09-06 改为只买第一个）"
+    },
+    "Buy_first": {
+        "action": "Click",
+        "target": [
+            363,
+            271,
+            60,
+            40
+        ],
+        "post_delay": 2500,
+        "text_doc": "只买第一个：点左上角第一张商品卡（商品随刷新轮换，按位置不按名字，2026-09-06 用户指定）",
+        "next": [
+            "Buyit",
+            "进入首页"
+        ]
     }
 }
