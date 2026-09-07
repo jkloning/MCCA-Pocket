@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "MCCA",
     "label": "交错战线助手",
-    "version": "1.7.15",
+    "version": "1.7.16",
     "icon": "icon.png",
     "github": "https://github.com/jkloning/MCCA-Pocket",
     "controller": [
