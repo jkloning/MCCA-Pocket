@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "MCCA",
     "label": "交错战线助手",
-    "version": "1.7.17",
+    "version": "1.7.18",
     "icon": "icon.png",
     "github": "https://github.com/jkloning/MCCA-Pocket",
     "controller": [
@@ -192,6 +192,43 @@
                             "next": [
                                 "活动_开始战斗"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "刷新战力阈值": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "5000",
+                    "pipeline_override": {
+                        "模拟军演_刷新对手": {
+                            "expected": "^([5-9]\\d{3}|[1-9]\\d{4})$"
+                        }
+                    }
+                },
+                {
+                    "name": "10000",
+                    "pipeline_override": {
+                        "模拟军演_刷新对手": {
+                            "expected": "^[1-9]\\d{4}$"
+                        }
+                    }
+                },
+                {
+                    "name": "20000",
+                    "pipeline_override": {
+                        "模拟军演_刷新对手": {
+                            "expected": "^([2-9]\\d{4})$"
+                        }
+                    }
+                },
+                {
+                    "name": "30000",
+                    "pipeline_override": {
+                        "模拟军演_刷新对手": {
+                            "expected": "^([3-9]\\d{4})$"
                         }
                     }
                 }
