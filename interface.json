@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "MCCA",
     "label": "交错战线助手",
-    "version": "1.7.13",
+    "version": "1.7.14",
     "icon": "icon.png",
     "github": "https://github.com/jkloning/MCCA-Pocket",
     "controller": [
@@ -34,5 +34,168 @@
     ],
     "import": [
         "tasks/MCCA.json"
-    ]
+    ],
+    "option": {
+        "扫荡次数": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "6次(默认)",
+                    "pipeline_override": {
+                        "活动_次数起点": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加1"
+                            ]
+                        },
+                        "活动_次数加1": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加2"
+                            ]
+                        },
+                        "活动_次数加2": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加3"
+                            ]
+                        },
+                        "活动_次数加3": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加4"
+                            ]
+                        },
+                        "活动_次数加4": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加5"
+                            ]
+                        },
+                        "活动_次数加5": {
+                            "enabled": true,
+                            "next": [
+                                "活动_开始战斗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1次",
+                    "pipeline_override": {
+                        "活动_次数起点": {
+                            "enabled": true,
+                            "next": [
+                                "活动_开始战斗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2次",
+                    "pipeline_override": {
+                        "活动_次数起点": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加1"
+                            ]
+                        },
+                        "活动_次数加1": {
+                            "enabled": true,
+                            "next": [
+                                "活动_开始战斗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3次",
+                    "pipeline_override": {
+                        "活动_次数起点": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加1"
+                            ]
+                        },
+                        "活动_次数加1": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加2"
+                            ]
+                        },
+                        "活动_次数加2": {
+                            "enabled": true,
+                            "next": [
+                                "活动_开始战斗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4次",
+                    "pipeline_override": {
+                        "活动_次数起点": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加1"
+                            ]
+                        },
+                        "活动_次数加1": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加2"
+                            ]
+                        },
+                        "活动_次数加2": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加3"
+                            ]
+                        },
+                        "活动_次数加3": {
+                            "enabled": true,
+                            "next": [
+                                "活动_开始战斗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "5次",
+                    "pipeline_override": {
+                        "活动_次数起点": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加1"
+                            ]
+                        },
+                        "活动_次数加1": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加2"
+                            ]
+                        },
+                        "活动_次数加2": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加3"
+                            ]
+                        },
+                        "活动_次数加3": {
+                            "enabled": true,
+                            "next": [
+                                "活动_次数加4"
+                            ]
+                        },
+                        "活动_次数加4": {
+                            "enabled": true,
+                            "next": [
+                                "活动_开始战斗"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }
