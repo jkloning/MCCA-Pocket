@@ -2,7 +2,7 @@
     "interface_version": 2,
     "name": "MCCA",
     "label": "交错战线助手",
-    "version": "1.7.18",
+    "version": "1.7.19",
     "icon": "icon.png",
     "github": "https://github.com/jkloning/MCCA-Pocket",
     "controller": [
@@ -229,6 +229,26 @@
                     "pipeline_override": {
                         "模拟军演_刷新对手": {
                             "expected": "^([3-9]\\d{4})$"
+                        }
+                    }
+                }
+            ]
+        },
+        "是否访问每个好友换抽": {
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "Infr_DealNextFriends": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "Infr_DealNextFriends": {
+                            "enabled": false
                         }
                     }
                 }
